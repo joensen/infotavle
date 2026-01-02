@@ -46,8 +46,12 @@ $CHROMIUM_CMD \
   --disable-session-crashed-bubble \
   --disable-restore-session-state \
   --disable-features=TranslateUI \
+  --disable-background-networking \
+  --disable-sync \
+  --disable-component-update \
   --autoplay-policy=no-user-gesture-required \
-  http://localhost:3000
+  --log-level=3 \
+  http://localhost:3000 2>/dev/null
 
 # When Chromium closes, stop the server
 echo "Chromium closed, stopping server..."
