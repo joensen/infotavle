@@ -36,6 +36,10 @@ echo "Code updated to latest commit: $(git rev-parse --short HEAD)"
 echo "Installing dependencies..."
 npm install --production
 
+# Fix script permissions (Git doesn't preserve executable bit on Windows)
+echo "Fixing script permissions..."
+chmod +x scripts/*.sh
+
 # Verify .env file exists
 if [ ! -f .env ]; then
     echo "ERROR: .env file not found!"
