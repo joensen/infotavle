@@ -23,9 +23,22 @@ if ! curl -s http://localhost:3000/health > /dev/null; then
     echo "Warning: Server may not have started properly"
 fi
 
+# Detect which Chromium browser is installed
+if command -v chromium-browser &> /dev/null; then
+    CHROMIUM_CMD="chromium-browser"
+elif command -v chromium &> /dev/null; then
+    CHROMIUM_CMD="chromium"
+else
+    echo "Error: Chromium browser not found!"
+    echo "Please install Chromium:"
+    echo "  sudo apt install chromium-browser"
+    kill $SERVER_PID
+    exit 1
+fi
+
 # Start Chromium in kiosk mode
 echo "Starting Chromium in kiosk mode..."
-chromium-browser \
+$CHROMIUM_CMD \
   --kiosk \
   --noerrdialogs \
   --disable-infobars \
