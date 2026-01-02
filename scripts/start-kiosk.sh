@@ -49,6 +49,8 @@ $CHROMIUM_CMD \
   --disable-background-networking \
   --disable-sync \
   --disable-component-update \
+  --password-store=basic \
+  --use-gl=egl \
   --autoplay-policy=no-user-gesture-required \
   --log-level=3 \
   http://localhost:3000 2>/dev/null

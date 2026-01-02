@@ -188,7 +188,29 @@ sudo journalctl -u infotavle -f
 
 To automatically start the application in kiosk mode when the Pi boots:
 
-### Method 1: Using Autostart (Recommended)
+### Method 1: Using labwc autostart (Recommended for Raspberry Pi OS Bookworm+)
+
+For modern Raspberry Pi OS with Wayland compositor:
+
+```bash
+# Create labwc config directory if it doesn't exist
+mkdir -p /home/pi/.config/labwc
+
+# Create autostart file
+nano /home/pi/.config/labwc/autostart
+```
+
+Add this line:
+
+```bash
+/home/pi/infotavle/scripts/start-kiosk.sh &
+```
+
+Save (Ctrl+X, Y, Enter) and reboot to test.
+
+### Method 2: Using .desktop file (For older Raspberry Pi OS)
+
+For older Raspberry Pi OS with X11:
 
 ```bash
 # Create autostart directory if it doesn't exist
@@ -210,7 +232,7 @@ X-GNOME-Autostart-enabled=true
 
 Save and reboot to test.
 
-### Method 2: Using Crontab
+### Method 3: Using Crontab
 
 ```bash
 # Edit crontab
