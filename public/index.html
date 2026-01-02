@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivitetskalender - Silkeborg Adventistkirke</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top section: Rotating ads -->
+    <div id="top-ad-container">
+        <div id="top-ad-display"></div>
+    </div>
+
+    <!-- Main two-column layout -->
+    <div class="main-container">
+        <!-- Left column: Calendar -->
+        <div class="calendar-column">
+            <h1>Aktivitetskalender</h1>
+            <div id="calendar-container">
+                <div class="loading">
+                    <p>Indlæser kalender...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column: 4 static ads -->
+        <div class="ads-column">
+            <img id="static-ad-1" class="static-ad" alt="Annonce 1">
+            <img id="static-ad-2" class="static-ad" alt="Annonce 2">
+            <img id="static-ad-3" class="static-ad" alt="Annonce 3">
+            <img id="static-ad-4" class="static-ad" alt="Annonce 4">
+        </div>
+    </div>
+
+    <!-- JavaScript modules -->
+    <script src="js/adRotator.js"></script>
+    <script src="js/calendarRenderer.js"></script>
+    <script src="js/updateManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

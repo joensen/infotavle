@@ -1,0 +1,146 @@
+/* Base styles - preserve from original */
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Top ad container */
+#top-ad-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#top-ad-display {
+    width: 100%;
+    transition: opacity 500ms ease-in-out;
+}
+
+#top-ad-display img,
+#top-ad-display video {
+    width: 100%;
+    display: block;
+}
+
+/* Main two-column layout - preserve from original */
+.main-container {
+    display: flex;
+}
+
+.calendar-column {
+    flex: 50%;
+}
+
+.ads-column {
+    flex: 50%;
+}
+
+/* Calendar container */
+#calendar-container {
+    height: 1300px;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+
+/* Calendar event styling - COMPACT */
+.calendar-events {
+    padding: 5px 0;
+}
+
+.date-group {
+    margin-bottom: 12px;
+}
+
+.date-header {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #444;
+    text-transform: capitalize;
+}
+
+.event-item {
+    background-color: #1a1a1a;
+    padding: 6px 8px;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    border-left: 3px solid #33B679;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-time {
+    font-size: 0.8em;
+    color: #999;
+    min-width: 110px;
+    flex-shrink: 0;
+}
+
+.event-title {
+    font-size: 0.95em;
+    font-weight: normal;
+    color: white;
+    flex-grow: 1;
+}
+
+/* Past event styling */
+.event-past {
+    opacity: 0.5;
+}
+
+.event-past .event-time,
+.event-past .event-title {
+    color: #666;
+}
+
+.event-checkmark {
+    color: #4CAF50;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+/* Static ads - preserve from original */
+.static-ad {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.static-ad:first-child {
+    margin-top: 20px;
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+
+/* Hide scrollbar for calendar */
+#calendar-container::-webkit-scrollbar {
+    display: none;
+}
+
+#calendar-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
