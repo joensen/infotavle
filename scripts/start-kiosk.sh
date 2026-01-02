@@ -52,6 +52,7 @@ $CHROMIUM_CMD \
   --password-store=basic \
   --use-gl=egl \
   --autoplay-policy=no-user-gesture-required \
+  --force-device-scale-factor=1.25 \
   --log-level=3 \
   http://localhost:3000 2>/dev/null
 
