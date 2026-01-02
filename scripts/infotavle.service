@@ -1,0 +1,18 @@
+[Unit]
+Description=Infotavle Church Information Display
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/infotavle
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /home/pi/infotavle/server/server.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=infotavle
+
+[Install]
+WantedBy=multi-user.target
