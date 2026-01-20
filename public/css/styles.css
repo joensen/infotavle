@@ -59,11 +59,11 @@ h1 {
 }
 
 .calendar-column {
-    flex: 50%;
+    flex: 40%;
 }
 
 .ads-column {
-    flex: 50%;
+    flex: 60%;
 }
 
 /* Calendar container */
@@ -137,8 +137,9 @@ h1 {
 
 /* Static ads - preserve from original */
 .static-ad {
-    width: 100%;
+    width: calc(100% - 20px);
     margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 10px;
     display: block;
     border: 3px solid rgb(218, 197, 145);
@@ -147,6 +148,10 @@ h1 {
 
 .static-ad:first-child {
     margin-top: 20px;
+}
+
+.static-ad:last-child {
+    margin-bottom: 0;
 }
 
 /* Loading state */
