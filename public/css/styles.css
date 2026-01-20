@@ -59,11 +59,11 @@ h1 {
 }
 
 .calendar-column {
-    flex: 45%;
+    flex: 46%;
 }
 
 .ads-column {
-    flex: 55%;
+    flex: 54%;
 }
 
 /* Calendar container */
