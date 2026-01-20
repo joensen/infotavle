@@ -7,6 +7,7 @@ class AdRotator {
     this.timeoutId = null;
     this.preloadedMedia = null;
     this.adStartTime = null;
+    this.progressFill = document.getElementById('ad-progress-fill');
   }
 
   async loadAds() {
@@ -77,6 +78,9 @@ class AdRotator {
       this.currentIndex = (this.currentIndex + 1) % this.ads.length;
       this.showAd(this.currentIndex);
     }, duration);
+
+    // Reset and start progress bar animation
+    this.startProgressBar(duration);
 
     // Fade out current content
     this.container.style.opacity = '0';
@@ -171,6 +175,19 @@ class AdRotator {
 
     // Clear all content
     this.container.innerHTML = '';
+  }
+
+  startProgressBar(duration) {
+    // Reset progress bar
+    this.progressFill.style.transition = 'none';
+    this.progressFill.style.width = '0%';
+
+    // Force reflow to ensure the reset takes effect
+    this.progressFill.offsetHeight;
+
+    // Start animation
+    this.progressFill.style.transition = `width ${duration}ms linear`;
+    this.progressFill.style.width = '100%';
   }
 
   stopRotation() {
