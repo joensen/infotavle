@@ -56,7 +56,9 @@ class AdRotator {
 
     const ad = this.ads[index];
     const baseUrl = ad.url || ad; // Support both object and string format
-    const adUrl = `${baseUrl}?t=${Date.now()}`; // Always cache-bust to get fresh ads
+    const hour = new Date().getHours();
+    const skipCacheBust = hour >= 8 && hour < 14; // No cache-bust during 8:00-14:00
+    const adUrl = skipCacheBust ? baseUrl : `${baseUrl}?t=${Date.now()}`;
     const duration = ad.duration || this.defaultDuration;
     const isVideo = baseUrl.toLowerCase().endsWith('.mp4');
     const fileName = baseUrl.split('/').pop();
@@ -143,7 +145,9 @@ class AdRotator {
 
     const ad = this.ads[index];
     const baseUrl = ad.url || ad; // Support both object and string format
-    const nextAdUrl = `${baseUrl}?t=${Date.now()}`; // Always cache-bust to get fresh ads
+    const hour = new Date().getHours();
+    const skipCacheBust = hour >= 8 && hour < 14; // No cache-bust during 8:00-14:00
+    const nextAdUrl = skipCacheBust ? baseUrl : `${baseUrl}?t=${Date.now()}`;
     const isVideo = baseUrl.toLowerCase().endsWith('.mp4');
 
     // Clean up previous preloaded media
